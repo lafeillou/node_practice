@@ -17,6 +17,7 @@ test('练习04 完成一个一对多查询', async () => {
     user = await User.create({
         name: 'Tom',
     })
+    
     await user.createProduct({
         title: '商品一'
     })

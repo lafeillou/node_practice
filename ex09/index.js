@@ -8,11 +8,17 @@ module.exports.brackets = (target, property) => {
     }
 }
 module.exports.sender = name => (target, property) => {
+
+    const old = target.prototype[property]
+    target.prototype[property] = msg => {
+        msg = `${name} : ${msg}`
+        return old(msg)
+    }
     // ##BEGIN## 代码已加密
-gywgywgywgywgdqgdUgdvgdegdwgywgdUgdPgdcgywgcRgywgdwgdggdmgdRgd9gdwgqDgdYgdmgdUgdwgdUgdwgRcgdYgd9g9YgdYgdmgdUgdYgd9gdmgdwgRcg9m
-gywgywgywgywgdwgdggdmgdRgd9gdwgqDgdYgdmgdUgdwgdUgdwgRcgdYgd9g9YgdYgdmgdUgdYgd9gdmgdwgRcg9mgywgcRgywgdDgdegdRgywgcRgckgywgRd
-gywgywgywgywgywgywgywgywgdDgdegdRgywgcRgywg9=gqqgRdgdvgdggdDgd9gRkgywgccgywgqqgRdgdDgdegdRgRkg9=
-gywgywgywgywgywgywgywgywgdmgd9gdwgd=gdmgdvgywgdUgdPgdcgqRgdDgdegdRgqk
-gywgywgywgywgRk
+// gywgywgywgywgdqgdUgdvgdegdwgywgdUgdPgdcgywgcRgywgdwgdggdmgdRgd9gdwgqDgdYgdmgdUgdwgdUgdwgRcgdYgd9g9YgdYgdmgdUgdYgd9gdmgdwgRcg9m
+// gywgywgywgywgdwgdggdmgdRgd9gdwgqDgdYgdmgdUgdwgdUgdwgRcgdYgd9g9YgdYgdmgdUgdYgd9gdmgdwgRcg9mgywgcRgywgdDgdegdRgywgcRgckgywgRd
+// gywgywgywgywgywgywgywgywgdDgdegdRgywgcRgywg9=gqqgRdgdvgdggdDgd9gRkgywgccgywgqqgRdgdDgdegdRgRkg9=
+// gywgywgywgywgywgywgywgywgdmgd9gdwgd=gdmgdvgywgdUgdPgdcgqRgdDgdegdRgqk
+// gywgywgywgywgRk
     // ##END##
 }
